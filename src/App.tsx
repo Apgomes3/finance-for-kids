@@ -1,18 +1,22 @@
-import { useEffect } from "react";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Nav from './components/Nav';
+import Dashboard from './pages/Dashboard';
+import SavingsGoals from './pages/SavingsGoals';
+import AllowanceTracker from './pages/AllowanceTracker';
+import Learn from './pages/Learn';
 
-function App() {
-  useEffect(() => {
-    fetch("/api/hello")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("Backend response:", data);
-      })
-      .catch((err) => {
-        console.error("Error:", err);
-      });
-  }, []);
-
-  return <h1>Check console 👀</h1>;
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Nav />
+      <main>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/savings" element={<SavingsGoals />} />
+          <Route path="/allowance" element={<AllowanceTracker />} />
+          <Route path="/learn" element={<Learn />} />
+        </Routes>
+      </main>
+    </BrowserRouter>
+  );
 }
-
-export default App;

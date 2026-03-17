@@ -54,12 +54,167 @@
   width: 1126px;
   max-width: 100%;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
   border-inline: 1px solid var(--border);
   min-height: 100svh;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+  padding: 0 32px;
+}
+
+.nav-link {
+  padding: 16px 20px;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 15px;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--text-h);
+}
+
+.nav-link.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* Page layout */
+.page {
+  padding: 32px;
+
+  @media (max-width: 1024px) {
+    padding: 24px 20px;
+  }
+}
+
+/* Cards */
+.card {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+}
+
+.card-clickable {
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+
+  &:hover {
+    box-shadow: var(--shadow);
+  }
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.card-label {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.card-value {
+  margin: 4px 0 0;
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+/* List */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.list-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-title {
+  margin: 0;
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+.list-sub {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: var(--text);
+}
+
+/* Amounts */
+.amount-positive {
+  font-weight: 600;
+  color: #22c55e;
+}
+
+.amount-negative {
+  font-weight: 600;
+  color: #ef4444;
+}
+
+/* Progress bar */
+.progress-bar {
+  background: var(--border);
+  border-radius: 99px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.4s;
+}
+
+/* Badge */
+.badge {
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 99px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  border: 1px solid var(--accent-border);
+}
+
+/* Button */
+.btn-primary {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+/* Status */
+.status-line {
+  margin-top: 32px;
+  font-size: 13px;
+  color: var(--text);
 }
 
 body {
